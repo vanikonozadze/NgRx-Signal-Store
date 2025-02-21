@@ -1,0 +1,31 @@
+.food-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  width: 300px;
+  height: 250px;
+  background-color: #909090;
+  border-radius: 25px;
+  padding-top: 30px;
+  p{
+    font-size: 26px;
+    font-family: Bahnschrift, serif;
+    color: #fff;
+  }
+  button{
+    width: 160px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: aliceblue;
+    font-family: Bahnschrift, serif;
+    cursor: pointer;
+    &:hover{
+      transition: 0.2s all ease-in;
+      background-color: #2a72b3;
+      color: #fff;
+    }
+  }
+}
