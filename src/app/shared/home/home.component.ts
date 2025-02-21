@@ -1,40 +1,23 @@
-import { Component } from '@angular/core';
-import {FoodItemComponent} from "../food-item/food-item.component";
+import {Component, inject} from '@angular/core';
+import { FoodItemComponent } from "../food-item/food-item.component";
+import { FOOD_ARR } from "../../core/configs/items.config";
+import { CartStore } from "../../store/cart.store";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    FoodItemComponent
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    standalone: true,
+    imports: [
+        FoodItemComponent
+    ],
+    providers: [ CartStore ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public foodArr = [
-    {
-      id: 1,
-      name: "Apple"
-    },
-    {
-      id: 2,
-      name: "Banana"
-    },
-    {
-      id: 3,
-      name: "Watermelon"
-    },
-    {
-      id: 4,
-      name: "Grapes"
-    },
-    {
-      id: 5,
-      name: "Lemon"
-    },
-    {
-      id: 6,
-      name: "Orange"
-    },
-  ]
+  readonly cartStore = inject(CartStore)
+  public readonly FOOD_ARR = FOOD_ARR
+
+  show(){
+    console.log(this.cartStore.cart())
+  }
 }

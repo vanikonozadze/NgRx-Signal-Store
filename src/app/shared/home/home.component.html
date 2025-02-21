@@ -1,7 +1,7 @@
 <div class="home">
   <div class="home-container">
-    @for(item of foodArr; track item; let i = $index){
-      <app-food-item [foodItem]="item"/>
+    @for(item of FOOD_ARR; track item; let i = $index){
+      <app-food-item [foodItem]="item" (click)="show()"/>
     }
   </div>
 </div>
