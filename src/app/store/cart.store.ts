@@ -26,10 +26,15 @@ export const CartStore = signalStore(
     ),
       addItem: (item: any) => {
         cartService.addItem(item);
+        patchState(store, (state) => ({ cart: [...state.cart, item]}))
       },
       deleteItem: (id: number) => {
         cartService.deleteItem(id);
-      }
+        patchState(store, (state) => ({ cart: [...state.cart]}))
+      },
+      getCartLength: (() => {
+        return store.cart().length;
+      })
     })
   ),
 );

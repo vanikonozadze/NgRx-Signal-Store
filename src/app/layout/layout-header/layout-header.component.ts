@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {CartStore} from "../../store/cart.store";
 
 @Component({
     selector: 'app-layout-header',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
     styleUrl: './layout-header.component.scss'
 })
 export class LayoutHeaderComponent {
-
+  cartStore = inject(CartStore)
 }
